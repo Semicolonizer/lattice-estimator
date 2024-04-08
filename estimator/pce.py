@@ -19,7 +19,7 @@ class Estimate:
     
     def __call__(self, pce_parameters):
         """
-        Provides a more precise estimation for the Permutation Code Equivalence problem when the class instance is called.
+        Provides a full estimation for the Permutation Code Equivalence problem when the class instance is called.
 
         Parameters:
         pce_parameters (dict): A dictionary of parameters necessary for the estimation.
