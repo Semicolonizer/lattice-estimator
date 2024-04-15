@@ -20,7 +20,7 @@ class ISDCost:
 
         #Approximateed expected cardinality of A_w
         if N_w == 0:
-            N_w = comb(n, w) * ((q-1) ** (w-2) * q ** (k-n+1))
+            N_w = comb(n, w) * ((q-1) ** (w-2)) * (q ** (k-n+1))
 
         # Number of codewords of weight w
         N = (q-1)*N_w
@@ -30,7 +30,7 @@ class ISDCost:
 
         #Estimated complexity
         if L == N:
-            cost = C_inf * log(N_w)
+            cost = C_inf * log(N)
         else:
             cost = (L / N) * C_inf
         
