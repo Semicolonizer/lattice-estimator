@@ -1,4 +1,4 @@
-from math import log, comb
+from sage.all import log, binomial
 
 class ISDCost:
     @staticmethod
@@ -10,23 +10,24 @@ class ISDCost:
         q (int): The size of the finite field.
         n (int): The length of the codeword.
         k (int): The dimension of the code.
-        w (int): The weight of the codeword.
+        w (int): The target weight of the codewords.
+        N_w (int): The estimated cardinality of set of codewords of weight w, up to scalar multiplication.
         L (int): The number of codewords to find.
-        N_w (int): The cardinality of 
+        
         
         Returns:
-        cost (float): The estimated cost.
+        cost (float): The estimated cost of finding L codewords with weight w.
         """
 
         #Approximateed expected cardinality of A_w
         if N_w == 0:
-            N_w = comb(n, w) * ((q-1) ** (w-2)) * (q ** (k-n+1))
+            N_w = binomial(n, w) * ((q-1) ** (w-2)) * (q ** (k-n+1))
 
-        # Number of codewords of weight w
+        # Number of possible codewords of weight w
         N = (q-1)*N_w
 
         #Complexity for C_inf
-        C_inf = (q * comb(n, w)) / comb(n-k,w-2)
+        C_inf = (q * binomial(n, w)) / binomial(n-k,w-2)
 
         #Estimated complexity
         if L == N:
