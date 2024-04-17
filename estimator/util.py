@@ -9,6 +9,7 @@ from sage.all import ceil, floor, log, oo, RR, cached_function, zeta
 from .io import Logging
 from .lwe_parameters import LWEParameters
 from .sis_parameters import SISParameters
+from .pce_parameters import PCEParameters
 from .conf import max_n_cache
 
 
@@ -448,7 +449,7 @@ def batch_estimate(params, algorithm, jobs=1, log_level=0, catch_exceptions=True
 
     """
 
-    if isinstance(params, LWEParameters) or isinstance(params, SISParameters):
+    if isinstance(params, LWEParameters) or isinstance(params, SISParameters) or isinstance(params, PCEParameters):
         params = (params,)
     if not hasattr(algorithm, "__iter__"):
         algorithm = (algorithm,)
