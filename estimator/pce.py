@@ -13,10 +13,10 @@ class Estimate:
         Provides a rough estimation for the Permutation Code Equivalence problem.
 
         Parameters:
-        pce_parameters (dict): A dictionary of parameters necessary for the estimation.
+        pce_parameters (PCEParameters): Parameters necessary for estimation.
 
         Returns:
-        float: The rough estimation result.
+        res (dict): The rough cost estimation results.
         """
 
         algorithms = {}
@@ -49,10 +49,10 @@ class Estimate:
         Provides a full estimation for the Permutation Code Equivalence problem when the class instance is called.
 
         Parameters:
-        pce_parameters (dict): A dictionary of parameters necessary for the estimation.
+        pce_parameters (PCEParameters): Parameters necessary for estimation.
 
         Returns:
-        float: The cost estimation results for attacks.
+        res (dict): The cost estimation results for attacks.
         """
 
         algorithms = {}
