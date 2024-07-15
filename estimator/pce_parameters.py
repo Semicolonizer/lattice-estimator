@@ -20,12 +20,10 @@ class PCEParameters:
         EXAMPLE::
 
             >>> p = PCE.Parameters(q=7, n=128, k=64, h=50, w=5)
-            PCEParameters(n=128, k=64, q=7, h=50, w=5)
             >>> p.updated(q=7, n=128, k=64, h=5, w=5)
             PCEParameters(n=128, k=64, q=7, h=5, w=5)
 
             >>> p = PCE.Parameters(q=7, n=128, k=64, h=5, w=5)
-            PCEParameters(n=128, k=64, q=7, h=5, w=5)
             >>> p.updated(q=7, n=128, k=64, h=50, w=5)
             PCEParameters(n=128, k=64, q=7, h=50, w=5)
             
